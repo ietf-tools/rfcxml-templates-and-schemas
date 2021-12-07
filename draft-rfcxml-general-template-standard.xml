@@ -38,7 +38,7 @@
 
     <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-standard [REPLACE]"/>
    
-    <author fullname="REPLACE" initials="REPLACE" role="editor" surname="REPLACE">
+    <author fullname="fullname [REPLACE]" initials="Initials [REPLACE]" role="editor" surname="Surname [REPLACE]">
     <!-- [CHECK] role="editor" is optional -->
     <!-- Can have more than one author -->
       
@@ -104,7 +104,50 @@
     <section>
       <name>Body [REPLACE]</name>
       <t>Body text [REPLACE]</t>
-    </section>
+      
+      <ol>
+        <li>Ordered list item [REPLACE/DELETE]</li>
+      </ol>
+      
+      <ul>
+        <li>Bulleted list item [REPLACE/DELETE]</li>
+      </ul>
+      
+      <table>
+        <thead>
+        <!-- [REPLACE/DELETE] a table header is optional -->
+          <tr><th>Column 1 [REPLACE]</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cell [REPLACE]</td></tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <name>Source [REPLACE]</name>
+        <sourcecode name="suggested filename [REPLACE/DELETE]" type="language [REPLACE/DELETE]" markers="true">
+        <!-- [CHECK] markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
+          <![CDATA[
+source code goes here [REPLACE]
+          ]]>
+        </sourcecode>
+      </figure>
+
+      <figure>
+        <name>Diagram [REPLACE]</name>
+        <artset>
+        <!-- This <artset> includes two <artwork> elements, each of a different type -->
+          <artwork type="svg" src="diagram.svg [REPLACE]" />
+          <!-- src points to either a local file or a URI. -->
+          <artwork type="ascii-art" name="diagram.txt [REPLACE/DELETE]">
+          <!-- name recommends a filename to use if the diagram is extracted -->  
+            <![CDATA[
+ ascii-art diagram goes here [REPLACE]
+            ]]>
+          </artwork>
+        </artset>
+      </figure>
+    </section>   
     
     <section anchor="IANA">
     <!-- All drafts are required to have an IANA considerations section. See RFC 5226 for a guide.-->

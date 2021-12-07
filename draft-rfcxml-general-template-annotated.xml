@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+     draft-rfcxml-general-template-annotated
+  
+     This template includes examples of most of the features of RFCXML with comments explaining 
+     how to customise them, and examples of how to achieve specific formatting.
+     
+     Documentation is at https://authors.ietf.org/en/templates-and-schemas
+-->
+<?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
+<!DOCTYPE rfc SYSTEM "rfcxml.ent">   <!-- Useful character entities -->
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>  <!-- used by XSLT processors -->
+
+<rfc
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  category="info"
+  docName="draft-rfcxml-general-template-annotated"
+  ipr="trust200902"
+  obsoletes=""
+  updates=""
+  submissionType="IETF"
+  xml:lang="en"
+  version="3">
+<!-- 
+    * docName should be the name of your draft
+    * category should be one of std, bcp, info, exp, historic
+    * ipr should be one of trust200902, noModificationTrust200902, noDerivativesTrust200902, pre5378Trust200902
+    * updates can be an RFC number as NNNN
+    * obsoletes can be an RFC number as NNNN 
+-->
+
+  <front>
+    <title abbrev="Abbreviated Title">Title</title> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#title-4 -->
+    <!--  The abbreviated title is required if the full title is longer than 39 characters -->
+
+    <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-annotated"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#seriesinfo -->
+    <!-- Set value to the name of the draft  -->
+   
+    <author fullname="author's full name" initials="author's initials" role="editor" surname="author's surname"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#author -->
+    <!-- role="editor" is optional -->
+    <!-- Can have more than one author -->
+      
+    <!-- all of the following elements are optional -->
+      <organization>Organization</organization> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#organization -->
+      <address> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#address -->
+        <postal>
+          <!-- Reorder these if your country does things differently -->
+          <street>Street</street>
+          <city>City</city>
+          <region>Region</region>
+          <code>Postal code</code>
+          <country>Country</country>
+          <!-- Uses two letter country code -->
+        </postal>        
+        <phone>Phone</phone>
+        <email>Email</email>  
+        <!-- Can have more than one <email> element -->
+        <uri>URI</uri>
+      </address>
+    </author>
+   
+    <date year="2021" month="12" day="1"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#date -->
+    <!-- On draft subbmission:
+         * If only the current year is specified, the current day and month will be used.
+         * If the month and year are both specified and are the current ones, the current day will
+           be used
+         * If the year is not the current one, it is necessary to specify at least a month and day="1" will be used.
+    -->
+
+    <area>General</area>
+    <workgroup>Internet Engineering Task Force</workgroup>
+    <!-- "Internet Engineering Task Force" is fine for individual submissions.  If this element is 
+          not present, the default is "Network Working Group", which is used by the RFC Editor as 
+          a nod to the history of the IETF. -->
+
+    <keyword>template</keyword>
+    <!-- Multiple keywords are allowed.  Keywords are incorporated into HTML output files for 
+         use by search engines. -->
+
+    <abstract>
+      <t>Abstract</t>
+    </abstract>
+ 
+  </front>
+
+  <middle>
+    
+    <section>
+    <!-- The default attributes for <section> are numbered="true" and toc="default" -->
+      <name>Introduction</name>
+      <t>Introductory text</t>
+      
+      <section anchor="requirements">
+      <!-- anchor is an optional attribute -->
+        <name>Requirements Language</name>
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+       document are to be interpreted as described in <xref target="RFC2119" format="default">RFC 2119</xref>.</t>
+      </section>
+      <!-- The 'Requirements Language' section is optional -->
+    </section>
+    
+    <section>
+      <name>Body</name>
+      <t>Body text</t>
+    </section>
+    
+    <section>
+      <name>List examples</name>
+      
+      <section>
+        <name>Simple unordered (bullet) list</name>
+        <t>Text before the list</t>
+        <ul spacing="normal">
+          <li>First bullet</li>
+          <li>Second bullet</li>
+        </ul>
+        <t>Text after the list.</t>
+      </section>
+      
+      <section>
+        <name>Ordered list with lowercase letters in brackets instead of numbers</name>
+        <ol type="(%c)"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#type-1 -->
+          <li>List item (a)</li>
+          <li>List item (b)</li>
+        </ol>
+      </section>
+      
+      <section>
+        <name>Continuous numbering in a list that is split by text or sections</name>
+        <!-- The following two lists render as 
+        Text to introduce the list
+        REQ1: This will be "REQ1:"
+        REQ2: This will be "REQ2:"
+        Some text in between
+        REQ3: This will be "REQ3:"
+        REQ4: This will be "REQ4:"
+        -->
+        <t>Text to introduce the list</t>
+        <ol type="REQ%d:" group="reqs">  <!-- value of group is user-defined https://authors.ietf.org/en/rfcxml-vocabulary#group -->
+          <li>This will be "REQ1:"</li>
+          <li>This will be "REQ2:"</li>
+        </ol>
+        <t>Some text in between</t>
+        <ol type="REQ%d:" group="reqs">  <!-- same value of group as before -->
+          <li>This will be "REQ3:"</li>
+          <li>This will be "REQ4:"</li>
+        </ol>
+        <section>
+          <name>Section in-between</name>
+          <t>More text in-between</t>
+          <ol type="REQ%d:" group="reqs">  <!-- same value of group as before -->
+            <li>This will be REQ5:</li>
+            <li>This will be REQ6:</li>
+          </ol>
+        </section>
+      </section>
+      
+      <section>
+        <name>Definition lists</name> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#dl -->
+        <dl newline="true"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#newline -->
+        <!-- Omit newline="true" if you want each definition to start on the same line as the corresponding term -->
+          <dt>First term:</dt>
+          <dd>Definition of the first term</dd>
+          <dt>Second term:</dt>
+          <dd>Definition of the second term</dd>
+        </dl>
+      </section>
+      
+      <section>
+        <name>Lists with hanging labels</name>
+        <t>the list item is indented the value of indent</t>  <!--  https://authors.ietf.org/en/rfcxml-vocabulary#indent -->
+        <dl newline="true" spacing="normal" indent="8">
+        <!-- Custom indent of 8 with the defintion starting on a new line after the term -->
+          <dt>short</dt>
+          <dd>With a label shorter than the indent.</dd>
+          <dt>fantastically long label</dt>
+          <dd>With a label longer than the indent.</dd>
+        </dl>
+      </section>
+    </section>
+    
+    <section>
+      <name>Tables</name>
+      <table> <!-- https://authors.ietf.org/rfcxml-vocabulary#table -->
+        <thead> <!-- https://authors.ietf.org/rfcxml-vocabulary#thead -->
+        <!-- A table header is optional -->
+          <tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr>
+        </thead>
+        <tbody> <!-- https://authors.ietf.org/rfcxml-vocabulary#tbody -->
+        <!-- A table body is required -->
+          <tr><td align="left">Left cell</td><td colspan="2">Colspan cell</td></tr>
+          <!-- align can be right, left or center.  colspan and rowspan work as they do in HTML -->
+          <tr><td rowspan="2">Rowspan cell</td><td align="center">Center cell</td><td align="right">Right cell</td></tr>
+          <tr><td>Cell</td><td>Cell</td></tr>
+        </tbody>
+        <tfoot> <!-- https://authors.ietf.org/rfcxml-vocabulary#tfoot -->
+        <!-- A table footer is optional -->
+          <tr><td rowspan="3">Rowspan footer</td></tr>
+        </tfoot>
+      </table>
+    </section>
+    
+    <section>
+      <name>Source code examples</name>
+      <t>This is an example c program</t>
+      <figure align="center"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#figure -->
+        <name>Source code figure</name>
+        <sourcecode name="helloworld.c" type="c" markers="true"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#sourcecode -->
+        <!-- markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
+        <!-- The CDATA wrapper is optional but is strongly recommended to avoid any unexpected processing
+             or issues with angle brackets. -->
+          <![CDATA[
+#include <stdio.h>
+        
+int main() {
+  printf("Hello World");
+  return 0;
+}
+          ]]>
+        </sourcecode>
+      </figure>
+    </section>
+    
+    <section>
+      <name>Adding diagrams</name>
+      <figure>
+        <name>A box</name>
+        <artset>  <!-- https://authors.ietf.org/en/rfcxml-vocabulary#artset -->
+        <!-- This <artset> includes two <artwork> elements, each of a different type.  Both are not 
+             always needed.  See https://authors.ietf.org/e/en/adding-diagrams -->
+          <artwork type="svg" name="box.svg">  <!-- https://authors.ietf.org/en/rfcxml-vocabulary#artwork -->
+            <!-- Inserting the SVG like this is only one way of adding an SVG diagram.  Another way is 
+                 to use the src attribute to point to an external file or URI.  The name attribute 
+                 recommends a filename to use if the artwork is extracted to a file. -->
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="71.0" height="40.0" viewBox="0 0 71 40">
+              <g>
+                <title>Layer 1</title>
+                <rect x="4.5" y="6.5" width="61.0" height="27.0" stroke="black" stroke-width="1.0" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
+                <text x="33.883" text-anchor="middle" y="26.559">
+                  <tspan fill="black" font-size="13.0">A box</tspan>
+                </text>
+              </g>
+            </svg>
+          </artwork>
+          <artwork type="ascii-art" name="box.txt">
+            <![CDATA[
+ +--------+
+ | A box  |
+ +--------+          
+            ]]>
+          </artwork>
+        </artset>      
+      </figure>
+    </section>
+    
+    <section anchor="IANA">
+    <!-- All drafts are required to have an IANA considerations section. See RFC 5226 for a guide.-->
+      <name>IANA Considerations</name>
+      <t>This memo includes no request to IANA.</t>
+    </section>
+    
+    <section anchor="Security">
+      <!-- All drafts are required to have a security considerations section. See RFC 3552 for a guide. -->
+      <name>Security Considerations</name>
+      <t>This document should not affect the security of the Internet.</t>
+    </section>
+    
+    <!-- NOTE: The Acknowledgements and Contributors sections are at the end of this template -->
+  </middle>
+
+  <back>
+    <references>
+      <name>References</name>
+      <references>
+        <name>Normative References</name>
+        
+        <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.3552.xml"/>
+        <!-- The recommended and simplest way to include a well known reference -->
+        
+      </references>
+ 
+      <references>
+        <name>Informative References</name>
+       
+        <reference anchor="RFC2119" target="https://www.rfc-editor.org/info/rfc2119">
+        <!-- Manually added reference -->
+          <front>
+            <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+            <author initials="S." surname="Bradner" fullname="S. Bradner">
+              <organization/>
+            </author>
+            <date year="1997" month="March"/>
+            <abstract>
+              <t>In many standards track documents several words are used to signify the requirements in the specification. These words are often capitalized. This document defines these words as they should be interpreted in IETF documents. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="BCP" value="14"/>
+          <seriesInfo name="RFC" value="2119"/>
+          <seriesInfo name="DOI" value="10.17487/RFC2119"/>
+        </reference>
+       
+        <reference anchor="exampleRefMin">
+        <!-- Example minimum reference -->
+          <front>
+            <title>Title</title>
+            <author initials="Initials" surname="Surname">
+              <organization/>
+            </author>
+            <date year="2006"/>
+          </front>
+        </reference>
+
+        <reference anchor="exampleRefOrg" target="http://www.example.com/">
+        <!-- Example reference written by an organization not a person -->
+          <front>
+            <title>Title</title>
+            <author>
+              <organization>Organization</organization>
+            </author>
+            <date year="1984"/>
+          </front>
+        </reference>       
+       
+      </references>
+    </references>
+    
+    <section>
+      <name>Appendix 1</name>
+      <t>This becomes an Appendix</t>
+    </section>
+
+    <section anchor="Acknowledgements" numbered="false">
+      <!-- an Acknowledgements section is optional -->
+      <name>Acknowledgements</name>
+      <t>This template uses extracts from templates written by Pekka Savola, Elwyn Davies and 
+        Henrik Levkowetz.</t>
+    </section>
+    
+    <section anchor="Contributors" numbered="false">
+      <!-- a Contributors section is optional -->
+      <name>Contributors</name>
+      <t>Thanks to all of the contributors.</t>
+    </section>
+    
+ </back>
+</rfc>
