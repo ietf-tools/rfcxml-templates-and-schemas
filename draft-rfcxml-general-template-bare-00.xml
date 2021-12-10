@@ -10,8 +10,14 @@
      Documentation is at https://authors.ietf.org/en/templates-and-schemas
 -->
 <?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
-<!DOCTYPE rfc SYSTEM "rfcxml.ent">   <!-- Useful character entities -->
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>  <!-- used by XSLT processors -->
+
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
 
 <rfc>
   <front>

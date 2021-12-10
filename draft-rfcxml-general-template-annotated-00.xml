@@ -8,13 +8,23 @@
      Documentation is at https://authors.ietf.org/en/templates-and-schemas
 -->
 <?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
-<!DOCTYPE rfc SYSTEM "rfcxml.ent">   <!-- Useful character entities -->
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>  <!-- used by XSLT processors -->
+
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
+<!-- The DOCTYPE above includes a small set of useful character entities.  Alternatively you can 
+     comment out that block and uncomment the following line, and place a copy of rfcxml.ent in 
+     the same directory as the I-D and thereby include a larger set of character entities. -->
+<!-- <!DOCTYPE rfc SYSTEM "rfcxml.ent"> -->
 
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="info"
-  docName="draft-rfcxml-general-template-annotated"
+  docName="draft-rfcxml-general-template-annotated-00"
   ipr="trust200902"
   obsoletes=""
   updates=""
@@ -33,10 +43,11 @@
     <title abbrev="Abbreviated Title">Title</title> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#title-4 -->
     <!--  The abbreviated title is required if the full title is longer than 39 characters -->
 
-    <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-annotated"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#seriesinfo -->
+    <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-annotated-00"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#seriesinfo -->
     <!-- Set value to the name of the draft  -->
    
     <author fullname="author's full name" initials="author's initials" role="editor" surname="author's surname"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#author -->
+    <!-- initials should not include an initial for the surname -->
     <!-- role="editor" is optional -->
     <!-- Can have more than one author -->
       
@@ -50,7 +61,7 @@
           <region>Region</region>
           <code>Postal code</code>
           <country>Country</country>
-          <!-- Uses two letter country code -->
+          <!-- Can use two letter country code -->
         </postal>        
         <phone>Phone</phone>
         <email>Email</email>  
@@ -71,8 +82,8 @@
     <workgroup>Internet Engineering Task Force</workgroup>
     <!-- "Internet Engineering Task Force" is fine for individual submissions.  If this element is 
           not present, the default is "Network Working Group", which is used by the RFC Editor as 
-          a nod to the history of the IETF. -->
-
+          a nod to the history of the RFC Series. -->
+    
     <keyword>template</keyword>
     <!-- Multiple keywords are allowed.  Keywords are incorporated into HTML output files for 
          use by search engines. -->
@@ -93,9 +104,12 @@
       <section anchor="requirements">
       <!-- anchor is an optional attribute -->
         <name>Requirements Language</name>
-        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-       document are to be interpreted as described in <xref target="RFC2119" format="default">RFC 2119</xref>.</t>
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
+          "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT
+          RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+          interpreted as described in BCP 14 <xref target="RFC2119"/>
+          <xref target="RFC8174"/> when, and only when, they appear in
+          all capitals, as shown here.</t>
       </section>
       <!-- The 'Requirements Language' section is optional -->
     </section>
@@ -106,10 +120,10 @@
     </section>
     
     <section>
-      <name>List examples</name>
+      <name>List Examples</name>
       
       <section>
-        <name>Simple unordered (bullet) list</name>
+        <name>Simple Unordered (Bullet) List</name>
         <t>Text before the list</t>
         <ul spacing="normal">
           <li>First bullet</li>
@@ -119,7 +133,7 @@
       </section>
       
       <section>
-        <name>Ordered list with lowercase letters in brackets instead of numbers</name>
+        <name>Ordered List With Lowercase Letters in Brackets Instead of Numbers</name>
         <ol type="(%c)"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#type-1 -->
           <li>List item (a)</li>
           <li>List item (b)</li>
@@ -127,7 +141,7 @@
       </section>
       
       <section>
-        <name>Continuous numbering in a list that is split by text or sections</name>
+        <name>Continuous Numbering in a List That is Split by Text or Sections</name>
         <!-- The following two lists render as 
         Text to introduce the list
         REQ1: This will be "REQ1:"
@@ -157,7 +171,7 @@
       </section>
       
       <section>
-        <name>Definition lists</name> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#dl -->
+        <name>Definition Lists</name> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#dl -->
         <dl newline="true"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#newline -->
         <!-- Omit newline="true" if you want each definition to start on the same line as the corresponding term -->
           <dt>First term:</dt>
@@ -168,7 +182,7 @@
       </section>
       
       <section>
-        <name>Lists with hanging labels</name>
+        <name>Lists With Hanging Labels</name>
         <t>the list item is indented the value of indent</t>  <!--  https://authors.ietf.org/en/rfcxml-vocabulary#indent -->
         <dl newline="true" spacing="normal" indent="8">
         <!-- Custom indent of 8 with the defintion starting on a new line after the term -->
@@ -196,20 +210,17 @@
         </tbody>
         <tfoot> <!-- https://authors.ietf.org/rfcxml-vocabulary#tfoot -->
         <!-- A table footer is optional -->
-          <tr><td rowspan="3">Rowspan footer</td></tr>
+          <tr><td colspan="3">Colspan footer</td></tr>
         </tfoot>
       </table>
     </section>
     
     <section>
-      <name>Source code examples</name>
-      <t>This is an example c program</t>
+      <name>Source Code Examples</name>
+      <t>This is an example C program</t>
       <figure align="center"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#figure -->
-        <name>Source code figure</name>
+        <name>Hello World in C</name>
         <sourcecode name="helloworld.c" type="c" markers="true"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#sourcecode -->
-        <!-- markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
-        <!-- The CDATA wrapper is optional but is strongly recommended to avoid any unexpected processing
-             or issues with angle brackets. -->
           <![CDATA[
 #include <stdio.h>
         
@@ -219,13 +230,17 @@ int main() {
 }
           ]]>
         </sourcecode>
+        <!-- markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
+        <!-- The CDATA wrapper is optional but is strongly recommended to avoid any unexpected processing
+             or issues with angle brackets. -->
       </figure>
     </section>
     
-    <section>
-      <name>Adding diagrams</name>
+    <section anchor="adding-diagrams">
+    <!-- anchor is optional and used for reference below -->
+      <name>Adding Diagrams</name>
       <figure>
-        <name>A box</name>
+        <name>A Box</name>
         <artset>  <!-- https://authors.ietf.org/en/rfcxml-vocabulary#artset -->
         <!-- This <artset> includes two <artwork> elements, each of a different type.  Both are not 
              always needed.  See https://authors.ietf.org/e/en/adding-diagrams -->
@@ -255,7 +270,7 @@ int main() {
     </section>
     
     <section anchor="IANA">
-    <!-- All drafts are required to have an IANA considerations section. See RFC 5226 for a guide.-->
+    <!-- All drafts are required to have an IANA considerations section. See RFC 8126 for a guide.-->
       <name>IANA Considerations</name>
       <t>This memo includes no request to IANA.</t>
     </section>
@@ -275,7 +290,7 @@ int main() {
       <references>
         <name>Normative References</name>
         
-        <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.3552.xml"/>
+        <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.8174.xml"/>
         <!-- The recommended and simplest way to include a well known reference -->
         
       </references>
@@ -342,6 +357,13 @@ int main() {
       <!-- a Contributors section is optional -->
       <name>Contributors</name>
       <t>Thanks to all of the contributors.</t>
+      <contact fullname="Jane Doe" initials="J" surname="Doe"><!-- https://authors.ietf.org/en/rfcxml-vocabulary#contact-->
+        <!-- including contact information for contributors is optional -->
+        <organization>Acme</organization>
+        <address>
+          <email>jdoe@example.com</email>
+        </address>
+      </contact>
     </section>
     
  </back>

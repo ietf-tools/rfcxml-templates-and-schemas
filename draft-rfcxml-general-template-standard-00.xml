@@ -10,13 +10,23 @@
      Documentation is at https://authors.ietf.org/en/templates-and-schemas
 -->
 <?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
-<!DOCTYPE rfc SYSTEM "rfcxml.ent">   <!-- Useful character entities -->
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>  <!-- used by XSLT processors -->
+
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
+<!-- The DOCTYPE above includes a small set of useful character entities.  Alternatively you can 
+     comment out that block and uncomment the following line, and place a copy of rfcxml.ent in 
+     the same directory as the I-D and thereby include a larger set of character entities. -->
+<!-- <!DOCTYPE rfc SYSTEM "rfcxml.ent"> -->
 
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="info"
-  docName="draft-rfcxml-general-template-standard"
+  docName="draft-rfcxml-general-template-standard-00"
   ipr="trust200902"
   obsoletes=""
   updates=""
@@ -36,10 +46,12 @@
     <title abbrev="Abbreviated Title">Title [REPLACE]</title>
     <!--  [REPLACE/DELETE] abbrev. The abbreviated title is required if the full title is longer than 39 characters -->
 
-    <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-standard [REPLACE]"/>
+    <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-standard-00 [REPLACE]"/>
    
     <author fullname="fullname [REPLACE]" initials="Initials [REPLACE]" role="editor" surname="Surname [REPLACE]">
-    <!-- [CHECK] role="editor" is optional -->
+      <!-- [CHECK]
+             * initials should not include an initial for the surname
+             * role="editor" is optional -->
     <!-- Can have more than one author -->
       
     <!-- all of the following elements are optional -->
@@ -73,7 +85,7 @@
     <workgroup>Internet Engineering Task Force</workgroup>
     <!-- "Internet Engineering Task Force" is fine for individual submissions.  If this element is 
           not present, the default is "Network Working Group", which is used by the RFC Editor as 
-          a nod to the history of the IETF. -->
+          a nod to the history of the RFC Series. -->
 
     <keyword>keyword</keyword>
     <!-- [REPLACE/DELETE]. Multiple allowed.  Keywords are incorporated into HTML output files for 
@@ -93,9 +105,12 @@
       
       <section>
         <name>Requirements Language</name>
-        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-       document are to be interpreted as described in <xref target="RFC2119" format="default">RFC 2119</xref>.</t>
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
+          "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT
+          RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+          interpreted as described in BCP 14 <xref target="RFC2119"/>
+          <xref target="RFC8174"/> when, and only when, they appear in
+          all capitals, as shown here.</t>
       </section>
       <!-- [CHECK] The 'Requirements Language' section is optional -->
 
@@ -126,11 +141,11 @@
       <figure>
         <name>Source [REPLACE]</name>
         <sourcecode name="suggested filename [REPLACE/DELETE]" type="language [REPLACE/DELETE]" markers="true">
-        <!-- [CHECK] markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
           <![CDATA[
 source code goes here [REPLACE]
           ]]>
         </sourcecode>
+        <!-- [CHECK] markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
       </figure>
 
       <figure>
@@ -150,7 +165,7 @@ source code goes here [REPLACE]
     </section>   
     
     <section anchor="IANA">
-    <!-- All drafts are required to have an IANA considerations section. See RFC 5226 for a guide.-->
+    <!-- All drafts are required to have an IANA considerations section. See RFC 8126 for a guide.-->
       <name>IANA Considerations</name>
       <t>This memo includes no request to IANA. [CHECK]</t>
     </section>
@@ -171,6 +186,7 @@ source code goes here [REPLACE]
         <name>Normative References</name>
         
         <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.2119.xml"/>
+        <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.8174.xml"/>
         <!-- The recommended and simplest way to include a well known reference -->
         
       </references>
@@ -221,6 +237,7 @@ source code goes here [REPLACE]
       <!-- [REPLACE/DELETE] a Contributors section is optional -->
       <name>Contributors</name>
       <t>Thanks to all of the contributors. [REPLACE]</t>
+      <!-- [CHECK] it is optional to add a <contact> record for some or all contributors -->
     </section>
     
  </back>
