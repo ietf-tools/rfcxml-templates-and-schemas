@@ -18,10 +18,6 @@
   <!ENTITY nbhy   "&#8209;">
   <!ENTITY wj     "&#8288;">
 ]>
-<!-- The DOCTYPE above includes a small set of useful character entities.  Alternatively you can 
-     comment out that block and uncomment the following line, and place a copy of rfcxml.ent in 
-     the same directory as the I-D and thereby include a larger set of character entities. -->
-<!-- <!DOCTYPE rfc SYSTEM "rfcxml.ent"> -->
 
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
