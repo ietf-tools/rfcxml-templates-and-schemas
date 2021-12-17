@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
-     draft-rfcxml-general-template-bare
+     draft-rfcxml-general-template-bare-00
   
      This templates includes the bare minimum needed for the template to successfully validate 
      against the RFCXML schema.  While it validates, it is not a valid Internet-Draft. This 
@@ -10,7 +10,7 @@
      Documentation is at https://authors.ietf.org/en/templates-and-schemas
 -->
 <?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
-<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>  <!-- used by XSLT processors -->
+<?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?>  <!-- used by XSLT processors -->
 
 <!DOCTYPE rfc [
   <!ENTITY nbsp    "&#160;">

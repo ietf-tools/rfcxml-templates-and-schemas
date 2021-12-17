@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
-     draft-rfcxml-general-template-annotated
+     draft-rfcxml-general-template-annotated-00
   
      This template includes examples of most of the features of RFCXML with comments explaining 
      how to customise them, and examples of how to achieve specific formatting.
@@ -8,7 +8,7 @@
      Documentation is at https://authors.ietf.org/en/templates-and-schemas
 -->
 <?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
-<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>  <!-- used by XSLT processors -->
+<?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?>  <!-- used by XSLT processors -->
 
 <!DOCTYPE rfc [
   <!ENTITY nbsp    "&#160;">
@@ -44,7 +44,7 @@
     <seriesInfo name="Internet-Draft" value="draft-rfcxml-general-template-annotated-00"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#seriesinfo -->
     <!-- Set value to the name of the draft  -->
    
-    <author fullname="author's full name" initials="author's initials" role="editor" surname="author's surname"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#author -->
+    <author fullname="Author's Full Name" initials="Author's Initials" role="editor" surname="Author's Surname"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#author -->
     <!-- initials should not include an initial for the surname -->
     <!-- role="editor" is optional -->
     <!-- Can have more than one author -->
@@ -216,8 +216,6 @@
     <section>
       <name>Source Code Examples</name>
       <t>This is an example C program</t>
-      <figure align="center"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#figure -->
-        <name>Hello World in C</name>
         <sourcecode name="helloworld.c" type="c" markers="true"> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#sourcecode -->
           <![CDATA[
 #include <stdio.h>
@@ -228,10 +226,10 @@ int main() {
 }
           ]]>
         </sourcecode>
-        <!-- markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added -->
+        <!-- markers="true" means that the rendered file will have <CODE BEGINS> and <CODE ENDS> added. -->
         <!-- The CDATA wrapper is optional but is strongly recommended to avoid any unexpected processing
-             or issues with angle brackets. -->
-      </figure>
+             or issues with angle brackets. 
+             <sourcecode></sourcecode> can optionally be wrapped in <figure></figure> -->
     </section>
     
     <section anchor="adding-diagrams">
@@ -246,7 +244,7 @@ int main() {
             <!-- Inserting the SVG like this is only one way of adding an SVG diagram.  Another way is 
                  to use the src attribute to point to an external file or URI.  The name attribute 
                  recommends a filename to use if the artwork is extracted to a file. -->
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="71.0" height="40.0" viewBox="0 0 71 40">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 71 40">
               <g>
                 <title>Layer 1</title>
                 <rect x="4.5" y="6.5" width="61.0" height="27.0" stroke="black" stroke-width="1.0" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
@@ -265,6 +263,12 @@ int main() {
           </artwork>
         </artset>      
       </figure>
+    </section>
+    
+    <section>
+      <name>Using xref</name>
+      <t>A reference to <xref target="adding-diagrams"/></t>
+      <t>A reference to <xref target="RFC8174" sectionFormat="of" section="2"/></t>
     </section>
     
     <section anchor="IANA">
