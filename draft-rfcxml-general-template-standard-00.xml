@@ -128,6 +128,14 @@
         <li>Bulleted list item [REPLACE/DELETE]</li>
       </ul>
       
+      <dl newline="true">
+        <!-- Omit newline="true" if you want each definition to start on the same line as the corresponding term -->
+        <dt>First term: [REPLACE/DELETE]</dt>
+        <dd>Definition of the first term [REPLACE/DELETE]</dd>
+        <dt>Second term: [REPLACE/DELETE]</dt>
+        <dd>Definition of the second term [REPLACE/DELETE]</dd>
+      </dl>
+      
       <table>
         <thead>
         <!-- [REPLACE/DELETE] a table header is optional -->
