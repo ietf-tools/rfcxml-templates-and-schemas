@@ -73,7 +73,7 @@
       </address>
     </author>
    
-    <date year="2021"/>
+    <date year="2022"/>
     <!-- On draft subbmission:
          * If only the current year is specified, the current day and month will be used.
          * If the month and year are both specified and are the current ones, the current day will
@@ -152,10 +152,10 @@ source code goes here [REPLACE]
         <name>Diagram [REPLACE]</name>
         <artset>
         <!-- This <artset> includes two <artwork> elements, each of a different type -->
-          <artwork type="svg" src="diagram.svg [REPLACE]" />
-          <!-- src points to either a local file or a URI. -->
-          <artwork type="ascii-art" name="diagram.txt [REPLACE/DELETE]">
-          <!-- name recommends a filename to use if the diagram is extracted -->  
+          <artwork type="svg" src="https://www.rfc-editor.org/materials/format/svg/stream.svg" />
+          <!-- [REPLACE] src points to either a local file or a URI. -->
+          <artwork type="ascii-art" name="stream.txt">
+            <!-- [REPLACE/DELETE] name recommends a filename to use if the diagram is extracted -->  
             <![CDATA[
  ascii-art diagram goes here [REPLACE]
             ]]>

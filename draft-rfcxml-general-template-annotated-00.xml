@@ -69,7 +69,7 @@
       </address>
     </author>
    
-    <date year="2021" month="12" day="1"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#date -->
+    <date year="2022" month="3" day="1"/> <!-- https://authors.ietf.org/en/rfcxml-vocabulary#date -->
     <!-- On draft subbmission:
          * If only the current year is specified, the current day and month will be used.
          * If the month and year are both specified and are the current ones, the current day will
@@ -241,7 +241,7 @@ int main() {
         <artset>  <!-- https://authors.ietf.org/en/rfcxml-vocabulary#artset -->
         <!-- This <artset> includes two <artwork> elements, each of a different type.  Both are not 
              always needed.  See https://authors.ietf.org/e/en/adding-diagrams -->
-          <artwork type="svg" name="box.svg">  <!-- https://authors.ietf.org/en/rfcxml-vocabulary#artwork -->
+          <artwork type="svg" name="https://www.rfc-editor.org/materials/format/svg/stream.svg">  <!-- https://authors.ietf.org/en/rfcxml-vocabulary#artwork -->
             <!-- Inserting the SVG like this is only one way of adding an SVG diagram.  Another way is 
                  to use the src attribute to point to an external file or URI.  The name attribute 
                  recommends a filename to use if the artwork is extracted to a file. -->
