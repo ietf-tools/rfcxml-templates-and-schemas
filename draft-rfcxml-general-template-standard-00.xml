@@ -39,7 +39,8 @@
        * category should be one of std, bcp, info, exp, historic
        * ipr should be one of trust200902, noModificationTrust200902, noDerivativesTrust200902, pre5378Trust200902
        * updates can be an RFC number as NNNN
-       * obsoletes can be an RFC number as NNNN 
+       * obsoletes can be an RFC number as NNNN
+       * submissionType should be one of IETF, IRTF, IAB, independent, editorial
 -->
 
   <front>
