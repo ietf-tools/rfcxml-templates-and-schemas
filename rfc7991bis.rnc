@@ -28,7 +28,7 @@ rfc =
    attribute iprExtract { xsd:IDREF }?,
    [ a:defaultValue = "IETF" ]
    attribute submissionType {
-     "IETF" | "IAB" | "IRTF" | "independent"
+     "IETF" | "IAB" | "IRTF" | "independent" | "editorial"
    }?,
    attribute docName { text }?,
    [ a:defaultValue = "false" ]
