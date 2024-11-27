@@ -1074,7 +1074,7 @@ reference =
 
 stream = 
  element stream {
-   ( "IETF" | "IAB" | "IRTF" | "independent" )?
+   ( "IETF" | "IAB" | "IRTF" | "independent" | "editorial" )?
 }
 
 referencegroup =
