@@ -587,6 +587,7 @@ dd =
    (( artset
       | artwork
       | aside
+      | blockquote
       | dl
       | figure
       | ol
