@@ -2,8 +2,8 @@
 This repository is for files associated with the RFCXML language.  For more information on RFCXML see the [authors.ietf.org](https://authors.ietf.org) site, particularly [RFCXML Overview and Background](https://authors.ietf.org/en/rfcxml-overview) and [RFCXML Vocabulary Reference](https://authors.ietf.org/en/rfcxml-vocabulary).
 
 When raising issues, please add appropriate labels:
-    * **bug**, **enhancement** or **question** for the type of issue
-    * **RFCXML**, **grammar files** or **templates** for the subject of the issue.  Use **RFCXML** when talking about the language itself, not any instantiation of it.
+* **bug**, **enhancement** or **question** for the type of issue
+* **RFCXML**, **grammar files** or **templates** for the subject of the issue.  Use **RFCXML** when talking about the language itself, not any instantiation of it.
 
 Issues with [xml2rfc](https://github.com/ietf-tools/xml2rfc) should be reported in that repository. 
 
