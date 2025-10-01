@@ -66,3 +66,11 @@ Changes to the grammar were initially frequent and then in recent years have bec
 | v3-2.7.0.rnc | 2017-07-01 | - Initial version of RFC 7991 grammar | 2.7.0 to 2.8.5|
 
 For more information on [xml2rfc](https://github.com/ietf-tools/xml2rfc) changes, see the [CHANGELOG](https://github.com/ietf-tools/xml2rfc/blob/main/CHANGELOG.md)
+
+## Legacy files
+The files found in the `legacy` folder are for those working with very old I-Ds or RFCs and should not be used for any new I-Ds.
+* **rfc7991.rnc** is the RelaxNG Compact Schema for the first release of v3 of RFCXML as documented in [RFC7991](https://www.rfc-editor.org/rfc/rfc7991.html). Use rfc7991bis.rnc instead.
+* **rfc7749.rnc** is the RelaxNG Compact Schema for v2 of RFCXML as documented in [RFC7749](https://www.rfc-editor.org/rfc/rfc7749.html). When originally published, this file was called v2.rnc.
+* **rfc2629.dtd** is the DTD for v1 of RFCXML as documented in [RFC2629](https://www.rfc-editor.org/rfc/rfc2629.html).
+* **rfc2629-other.ent** is a small set of character entities. This file is no longer needed as the special processing of non-ASCII character has been superseded by direct support for non-ASCII characters in RFCXML.
+* **rfc2629-xhtml.ent** is a larger set of character entities. This file is no longer needed as the special processing of non-ASCII character has been superseded by direct support for non-ASCII characters in RFCXML.
